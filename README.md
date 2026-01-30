@@ -1,19 +1,11 @@
-<div align="center">
+## Model Training
 
-# Email Spam Detector
+Run the training pipeline:
 
-Repository for the Email Spam Detector project.
+python -m src.train
 
-</div>
-
----
-
-## Status
-
-In **Development**
-
-This project is currently under development. No code or features are available yet.
-
----
-
-> **Check out [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.**
+This will:
+- Load and clean the dataset
+- Perform TF-IDF + LinearSVC training
+- Tune hyperparameters with GridSearchCV
+- Save the trained model to /models

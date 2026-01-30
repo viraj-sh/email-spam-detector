@@ -8,3 +8,5 @@ __pycache__
 */logs
 logs
 .ruff_cache
+data/
+models/
