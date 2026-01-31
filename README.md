@@ -1,13 +1,19 @@
-## Model Training
+<div align="center">
 
-The training workflow is provided as a notebook for one-time model training and experimentation.
+# Medical Language Simplifier
 
-Open and run:
+Repository for the [Medical Language Simplifier](https://github.com/Team-Rookie/medical-language-simplifier) NLP project.
 
-notebooks/spam_training_pipeline.ipynb
+</div>
 
-This notebook will:
-- Load and clean the dataset from /dataset
-- Perform TF-IDF + LinearSVC training
-- Tune hyperparameters using GridSearchCV
-- Save the trained model to app/model/
+---
+
+## Status
+
+In **Development**
+
+This project is currently under development. No code or features are available yet.
+
+---
+
+> **Check out [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.**
