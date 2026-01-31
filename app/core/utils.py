@@ -1,6 +1,9 @@
 from typing import Any, Optional
 import re
 
+MODEL_PATH = "./app/model/spam_classifier_v1.joblib"
+LABEL_MAPPING_PATH = "./app/model/label_mapping_v1.joblib"
+
 # ASCII COLORS
 RESET = "\033[0m"
 BOLD = "\033[1m"
@@ -12,13 +15,13 @@ FG_YELLOW = "\033[33m"
 
 def standard_response(
     success: bool,
-    error_msg: Optional[str] = None,
+    error: Optional[str] = None,
     data: Optional[Any] = None,
     status_code: int | None = None,
 ) -> dict[str, Any]:
     return {
         "success": bool(success),
-        "error": error_msg if not success else None,
+        "error": error if not success else None,
         "data": data if success else None,
         "status_code": status_code,
     }
