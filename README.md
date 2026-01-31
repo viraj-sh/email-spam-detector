@@ -1,11 +1,13 @@
 ## Model Training
 
-Run the training pipeline:
+The training workflow is provided as a notebook for one-time model training and experimentation.
 
-python -m src.train
+Open and run:
 
-This will:
-- Load and clean the dataset
+notebooks/spam_training_pipeline.ipynb
+
+This notebook will:
+- Load and clean the dataset from /dataset
 - Perform TF-IDF + LinearSVC training
-- Tune hyperparameters with GridSearchCV
-- Save the trained model to /models
+- Tune hyperparameters using GridSearchCV
+- Save the trained model to app/model/
