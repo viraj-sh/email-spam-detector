@@ -1,6 +1,9 @@
 from typing import Any, Optional
 import re
 
+MODEL_PATH = "./app/model/spam_classifier_v1.joblib"
+LABEL_MAPPING_PATH = "./app/model/label_mapping_v1.joblib"
+
 # ASCII COLORS
 RESET = "\033[0m"
 BOLD = "\033[1m"

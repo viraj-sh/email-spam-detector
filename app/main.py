@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.v1.system import router as system_router
+from api.v1.predict import router as predict_router
 from core.logging import setup_logging
 
 logger = setup_logging(name="app", level="INFO")
@@ -26,3 +27,4 @@ logger.info("Application startup complete")
 
 # Include routers
 app.include_router(system_router, prefix="/api/v1")
+app.include_router(predict_router, prefix="/api/v1")
