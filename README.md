@@ -1,8 +1,8 @@
 <div align="center">
 
-# Email Spam Detector
+# Medical Language Simplifier
 
-Repository for the Email Spam Detector project.
+Repository for the [Medical Language Simplifier](https://github.com/Team-Rookie/medical-language-simplifier) NLP project.
 
 </div>
 
