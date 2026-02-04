@@ -1,0 +1,59 @@
+name: Browser Extension CI
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "browser-extension/**"
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-extension:
+    name: Build Extension
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: browser-extension
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build extension
+        run: npm run build
+
+      - name: Zip extension (tag only)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          cd build
+          zip -r ../email-spam-extension-${GITHUB_REF_NAME}.zip .
+
+      - name: Upload extension to release (tag only)
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for i in {1..12}; do
+            gh release view "${GITHUB_REF_NAME}" && break
+            echo "Waiting for release to be created..."
+            sleep 10
+          done
+
+          echo "Files in current directory:"
+          ls -lh
+
+          gh release upload "${GITHUB_REF_NAME}" "email-spam-extension-${GITHUB_REF_NAME}.zip" --clobber
