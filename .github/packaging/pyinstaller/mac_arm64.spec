@@ -1,0 +1,46 @@
+import sys
+import os
+from PyInstaller.utils.hooks import collect_submodules
+
+spec_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+project_root = os.path.abspath(os.path.join(spec_dir, "..", "..", ".."))
+
+hidden = collect_submodules("fastapi") + collect_submodules("uvicorn") + collect_submodules('joblib') + collect_submodules('sklearn')
+
+block_cipher = None
+
+a = Analysis(
+    [os.path.join(project_root, ".github", "scripts", "launcher.py")],
+    pathex=[project_root],
+    binaries=[],
+    datas=[
+        (os.path.join(project_root, "app", "model"), "app/model"),
+        (os.path.join(project_root, "app", "core"), 'app/core'),
+        (os.path.join(project_root, "app", "api"), 'app/api'),
+        (os.path.join(project_root, "app", "schema"), 'app/schema'),
+        (os.path.join(project_root, "app", "services"), 'app/services'), 
+        (os.path.join(project_root, ".github", "assets", "favicon.ico"), ".github/assets/favicon.ico"),
+    ],
+    hiddenimports=hidden,
+    hookspath=[],
+    runtime_hooks=[],
+    excludes=[],
+    cipher=block_cipher,
+)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='email-spam-detector',
+    debug=False,
+    strip=False,
+    upx=False,
+    console=True,
+    icon=os.path.join(project_root, ".github", "assets", "favicon.ico"),
+)

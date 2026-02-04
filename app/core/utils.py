@@ -1,8 +1,17 @@
 from typing import Any, Optional
 import re
+import os
+import sys
 
-MODEL_PATH = "./app/model/spam_classifier_v1.joblib"
-LABEL_MAPPING_PATH = "./app/model/label_mapping_v1.joblib"
+def resource_path(relative_path: str):
+    if getattr(sys, 'frozen', False):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+MODEL_PATH = resource_path("app/model/spam_classifier_v1.joblib")
+LABEL_MAPPING_PATH = resource_path("app/model/label_mapping_v1.joblib")
 
 # ASCII COLORS
 RESET = "\033[0m"
