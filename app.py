@@ -15,7 +15,7 @@ sys.path.insert(0, app_dir)
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Launch FastAPI server")
+    parser = argparse.ArgumentParser(description="Launch FastAPI backend")
     parser.add_argument(
         "--debug",
         action="store_true",
@@ -25,7 +25,7 @@ def parse_args():
         "--port",
         type=int,
         default=None,
-        help="Optional port to run the server on (overrides auto-selection)",
+        help="Optional port to run the backend on (overrides auto-selection)",
     )
     return parser.parse_args()
 
@@ -61,15 +61,6 @@ def wait_for_server(port, timeout=10):
     return False
 
 
-def open_browser(url):
-    try:
-        import webbrowser
-
-        webbrowser.open(url, new=2)
-    except Exception as e:
-        logger.warning(f"Failed to open browser: {e}")
-
-
 if __name__ == "__main__":
     args = parse_args()
     env_port = os.environ.get("PORT")
@@ -80,7 +71,7 @@ if __name__ == "__main__":
     if args.debug:
         print(
             f"""
-{BOLD}{FG_RED}🚀 Starting application{RESET}
+{BOLD}{FG_RED}🚀 Starting backend{RESET}
 {FG_WHITE}• URL:{RESET} {BOLD}http://127.0.0.1:{port}{RESET}
 {FG_WHITE}• Host:{RESET} 127.0.0.1
 {FG_WHITE}• Port:{RESET} {BOLD}{port}{RESET}
@@ -94,7 +85,7 @@ if __name__ == "__main__":
     else:
         print(
             f"""
-{BOLD}{FG_RED}🚀 Starting application{RESET}
+{BOLD}{FG_RED}🚀 Starting backend{RESET}
 {FG_WHITE}• Mode:{RESET} {BOLD}QUIET{RESET}"""
         )
 
@@ -136,21 +127,19 @@ if __name__ == "__main__":
         url = f"http://127.0.0.1:{port}"
         print(
             f"""
-{BOLD}{FG_GREEN}✅ Application is ready{RESET}
+{BOLD}{FG_GREEN}✅ Backend is running{RESET}
 {FG_WHITE}• URL:{RESET} {BOLD}{url}{RESET}
-{FG_WHITE}• Browser:{RESET} opening a new tab
 
 {FG_YELLOW}Tip:{RESET} use --debug for full logs and manual control
 {FG_YELLOW}GitHub:{RESET} https://github.com/viraj-sh/email-spam-detector
 {FG_YELLOW}Docs:{RESET}   https://github.com/viraj-sh/email-spam-detector/wiki
 
-{FG_RED}Note:{RESET} Keep this terminal open; closing it will stop the server."""
+{FG_RED}Note:{RESET} Keep this terminal open; closing it will stop the backend."""
         )
-        open_browser(url)
     elif not args.debug:
         print(
             f"""
-{BOLD}{FG_RED}❌ Application failed to start{RESET}
+{BOLD}{FG_RED}❌ Backend failed to start{RESET}
 {FG_WHITE}• Port attempted:{RESET} {BOLD}{port}{RESET}
 {FG_WHITE}• Mode:{RESET} {BOLD}QUIET{RESET} (logs suppressed)
 
