@@ -18,7 +18,7 @@ a = Analysis(
         (os.path.join(project_root, "app", "core"), 'app/core'),
         (os.path.join(project_root, "app", "api"), 'app/api'),
         (os.path.join(project_root, "app", "schema"), 'app/schema'),
-        (os.path.join(project_root, "app", "services"), 'app/services'), 
+        (os.path.join(project_root, "app", "services"), 'app/services'),
         (os.path.join(project_root, ".github", "assets", "favicon.ico"), ".github/assets/favicon.ico"),
     ],
     hiddenimports=hidden,

@@ -66,8 +66,6 @@ def wait_for_server(port, timeout=10):
     return False
 
 
-
-
 def _sigint_handler(signum, frame):
     try:
         server.should_exit = True

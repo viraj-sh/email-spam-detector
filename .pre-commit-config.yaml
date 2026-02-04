@@ -15,19 +15,19 @@ repos:
 
       - id: frontend-lint
         name: frontend lint
-        entry: bash -c "cd browser-extension && npm run lint"
+        entry: bash -c "cd browser-extension && npm install && npm run lint"
         language: system
         pass_filenames: false
 
       - id: frontend-format
         name: frontend format
-        entry: bash -c "cd browser-extension && npm run format"
+        entry: bash -c "cd browser-extension && npm install && npm run format"
         language: system
         pass_filenames: false
 
       - id: frontend-build
         name: frontend build
-        entry: bash -c "cd browser-extension && npm run build"
+        entry: bash -c "cd browser-extension && npm install && npm run build"
         language: system
         pass_filenames: false
 

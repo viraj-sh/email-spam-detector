@@ -12,17 +12,14 @@ For more information, see the [Getting Started](https://github.com/viraj-sh/emai
     <img src="https://img.shields.io/badge/Wiki-%23000000.svg?logo=gitbook&label=Docs&logoColor=white&color=2563eb" alt="Github Wiki">
 </a>
 <a href="https://github.com/viraj-sh/email-spam-detector/releases/latest">
-    <img src="https://img.shields.io/github/v/release/viraj-sh/uniclare-client?label=Release&logoColor=white&color=2563eb" alt="Github Release">
+    <img src="https://img.shields.io/github/v/release/viraj-sh/email-spam-detector?label=Release&logoColor=white&color=2563eb" alt="Github Release">
 </a>
-<a href="https://hub.docker.com/r/virajsh/email-spam-detector">
-    <img src="https://img.shields.io/docker/v/virajsh/uniclare-client?logo=docker&label=Docker&logoColor=white&color=2563eb&sort=semver" alt="Docker Image">
-</a>
+<!-- <a href="https://hub.docker.com/r/virajsh/email-spam-detector">
+    <img src="https://img.shields.io/docker/v/virajsh/email-spam-detector?logo=docker&label=Docker&logoColor=white&color=2563eb&sort=semver" alt="Docker Image">
+</a> -->
 <a href="https://github.com/viraj-sh/email-spam-detector/blob/main/requirements/base.txt">
     <img src="https://img.shields.io/badge/Python-3.13.5-blue.svg?logo=python&label=Python&logoColor=white&color=2563eb" alt="Docker Image">
 </a>
-
-
-<!-- https://raw.githubusercontent.com/viraj-sh/email-spam-detector/refs/heads/develop/.github/assets -->
 
 
 <img src=".github/assets/line-blue.png" alt="line break" width="100%" height="3px">
@@ -37,9 +34,6 @@ For more information, see the [Getting Started](https://github.com/viraj-sh/emai
 
 Download and run the backend build for your operating system:
 
-<!-- [![Windows (.exe)](https://img.shields.io/badge/Windows_\(.exe\)-x64-blue?style=flat-square)](https://github.com/viraj-sh/email-spam-detector/releases/download/v1.1.3/uniclare-client-v1.1.3-win-x64.exe)
-[![Linux (.tar.gz)](https://img.shields.io/badge/Linux-x86__64-orange?style=flat-square)](https://github.com/viraj-sh/email-spam-detector/releases/download/v1.1.3/uniclare-client-v1.1.3-linux-x86__64)
-[![macOS (.zip)](https://img.shields.io/badge/macOS-arm64-lightgrey?style=flat-square)](https://github.com/viraj-sh/email-spam-detector/releases/download/v1.1.3/uniclare-client-v1.1.3-macos-arm64) -->
 <a href="https://github.com/viraj-sh/email-spam-detector/releases">
     <img src="https://img.shields.io/badge/Windows-x64-2563eb?label=Windows&color=white" alt="Windows Release">
 </a>
@@ -104,5 +98,5 @@ Download and run the backend build for your operating system:
 
 ## Project Status
 
-In **Partial Development**  
+In **Partial Development**
 **Check out [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.**
