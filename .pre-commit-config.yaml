@@ -13,6 +13,24 @@ repos:
         language: system
         types: [python]
 
+      - id: frontend-lint
+        name: frontend lint
+        entry: bash -c "cd browser-extension && npm run lint"
+        language: system
+        pass_filenames: false
+
+      - id: frontend-format
+        name: frontend format
+        entry: bash -c "cd browser-extension && npm run format"
+        language: system
+        pass_filenames: false
+
+      - id: frontend-build
+        name: frontend build
+        entry: bash -c "cd browser-extension && npm run build"
+        language: system
+        pass_filenames: false
+
   - repo: https://github.com/PyCQA/bandit
     rev: 1.9.2
     hooks:
